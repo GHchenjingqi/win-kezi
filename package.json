@@ -1,0 +1,40 @@
+{
+  "name": "knowledgeapp",
+  "version": "1.0.0",
+  "main": "main.js",
+  "author": "chenxiaozhi",
+  "description": "知识APP",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "pack": "electron-builder --dir"
+  },
+  "build": {
+    "appId": "com.aaa",
+    "productName": "knowledgeAPP",
+    "directories": {
+      "output": "dist_electron"
+    },
+    "files": [
+      "view/**/*",
+      "main.js",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    }
+  },
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  },
+  "license": "ISC"
+}
